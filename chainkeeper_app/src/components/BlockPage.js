@@ -21,7 +21,8 @@ class BlockPage extends Component {
 
   componentDidMount() {
        this.setState({ isLoading: true });
-       let openVal = parseInt(this.props.match.params.id);
+       let openVal = parseInt(this.props.match.params.id, 10);
+       console.log(openVal);
 
         fetch("http://192.248.22.171:8080/blocksci/api/v5/block/"+openVal)
               .then(response => response.json())
